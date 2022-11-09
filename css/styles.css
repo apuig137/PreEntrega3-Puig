@@ -46,33 +46,6 @@ a {
     margin: 100px auto;
 }
 
-@media (max-width:576px){
-    .layout-index{
-        grid-template-columns: auto;
-        grid-template-rows: repeat(8, 250px);
-        grid-template-areas:
-        "jeans"
-        "camisas"
-        "remeras"
-        "zapatillas"
-        "joggins"
-        "camperas"
-        "relojes"
-        "perfumes";
-        width: 90%;
-        margin: 30px auto;
-    }
-
-    .tittle{
-        padding: 100px;
-    }
-
-    .dinamic-div{
-        width: 400px;
-        height: 300px;
-    }
-}
-
 .tarjeta{
     background-color: burlywood;
     text-align: center;
@@ -148,7 +121,7 @@ a {
     flex-wrap: wrap;
 }
 
-.dinamic-div{
+.dinamico-div{
     background-color: white;
     border: black solid;
     border-radius: 5px;
@@ -194,6 +167,37 @@ a {
     color: #ffffff;
 }
 
+@media (max-width:576px){
+    .layout-index{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(8, 250px);
+        grid-template-areas:
+        "jeans"
+        "camisas"
+        "remeras"
+        "zapatillas"
+        "joggins"
+        "camperas"
+        "relojes"
+        "perfumes";
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .tittle{
+        padding: 100px;
+    }
+
+    .dinamico-div{
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .form-content input{
+        width: 300px;
+    }
+}
+
 /* acerca.html */
 
 .layout-acerca{
@@ -212,7 +216,7 @@ a {
 
 .acerca-content{
     margin: 40px 0;
-    padding: 0 200px;
+    padding: 0 20%;
     border: solid #212529 2px;
     border-radius: 5px;
 }
@@ -221,4 +225,33 @@ a {
     background-color: #212529;
     color: #ffffff;
     transition: .5s;
+}
+
+@media (max-width:576px){
+    .layout-acerca{
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .logo-img{
+        width: 100px;
+        height: 100px;
+    }
+
+    .acerca-content{
+        margin: 30px 0;
+        padding: 0 5%;
+    }
+}
+
+@media (max-width:768px){
+    .acerca-content{
+        padding: 0 10%;
+    }
+}
+
+@media (max-width:992px){
+    .acerca-content{
+        padding: 0 15%;
+    }
 }
