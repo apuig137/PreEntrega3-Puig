@@ -1,0 +1,118 @@
+//index
+
+.layout-index{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(8, 250px);
+    grid-template-areas:
+        "jeans camisas camisas"
+        "jeans camisas camisas"
+        "remeras remeras zapatillas"
+        "remeras remeras zapatillas"
+        "joggins camperas camperas"
+        "joggins camperas camperas"
+        "relojes relojes perfumes"
+        "relojes relojes perfumes";
+    column-gap: 10px;
+    row-gap: 10px;
+    background-color: $gris-oscuro;
+    width: 70%;
+    margin: 100px auto;
+    border: $borde;
+    .remeras{
+        grid-area: remeras;
+    }
+    .camperas{
+        grid-area: camperas;
+    }
+    .zapatillas{
+        grid-area: zapatillas;
+    }
+    .joggins{
+        grid-area: joggins;
+    }
+    .jeans{
+        grid-area: jeans;
+    }
+    .camisas{
+        grid-area: camisas;
+    }
+    .relojes{
+        grid-area: relojes;
+    }
+    .perfumes{
+        grid-area: perfumes;
+    }
+}
+
+//quienes somos
+
+.layout-acerca{
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .logo-acerca{
+        width: 200px;
+        height: 200px;
+    }
+    .acerca-content{
+        margin: 40px 0;
+        padding: 0 20%;
+        border: solid #212529 2px;
+        border-radius: 5px;
+    }
+    .acerca-content:hover{
+        background-color: $gris-oscuro;
+        color: $blanco;
+        transition: .5s;
+    }
+}
+
+//camisas jeans joggins zapatillas remeras
+
+.layout-ropa{
+    @extend .layout-index;
+    grid-template-rows: repeat(3, 450px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3"
+        "tarjeta4 tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8 tarjeta9";
+}
+
+//perfumes
+
+.layout-perfumes{
+    @extend .layout-index;
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3"
+        "tarjeta4 tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8 tarjeta9";
+}
+
+//camperas
+
+.layout-camperas{
+    @extend .layout-index;
+    grid-template-rows: repeat(3, 500px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3"
+        "tarjeta4 tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8 tarjeta9";
+}
+
+//relojes zapatillas
+
+.layout-relojes{
+    @extend .layout-index;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, 400px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2"
+        "tarjeta3 tarjeta4"
+        "tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8";
+}

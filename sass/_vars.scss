@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
+
+$gris-oscuro: #212529;
+$blanco: #ffffff;
+$borde: #212529 solid 10px;
+
+@mixin sizes($width,$height){
+    height: $height;
+    width: $width;
+}
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
