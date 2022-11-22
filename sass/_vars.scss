@@ -1,2 +1,8 @@
 $gris-oscuro: #212529;
-$blanco: #fff;
+$blanco: #ffffff;
+$negro: #000000;
+
+@mixin sizes($width,$heigth){
+    width: $width;
+    height: $heigth;
+}
