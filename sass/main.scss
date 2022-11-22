@@ -1,20 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
+@import "vars";
 
 *{
     font-family: 'Libre Franklin', sans-serif;
 }
 
 nav{
-    .container-fluid{
-        .img-logo{
-            height: 50px;
-            width: 50px;
-        }
+    .img-logo{
+        height: 50px;
+        width: 50px;
     }
 }
 
 .tittle{
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +22,6 @@ nav{
     font-size:xx-large;
     font-weight: bold;
     background-image: url(https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-hipster-lumbersexual-empresario-modelo-hombre-vestido-ropa-chaqueta-jeans_158538-1729.jpg?w=2000);
-    grid-area: titulo;
 }
 
 .tarjeta{
@@ -76,34 +73,28 @@ nav{
     background-color: #212529;
     width: 70%;
     margin: 100px auto;
+    border: 10px solid #212529;
     .remeras{
         grid-area: remeras;
     }
-    
     .camperas{
         grid-area: camperas;
     }
-    
     .zapatillas{
         grid-area: zapatillas;
     }
-    
     .joggins{
         grid-area: joggins;
     }
-    
     .jeans{
         grid-area: jeans;
     }
-    
     .camisas{
         grid-area: camisas;
     }
-    
     .relojes{
         grid-area: relojes;
     }
-    
     .perfumes{
         grid-area: perfumes;
     }
@@ -129,7 +120,7 @@ nav{
         .form-content{
             padding: 5px;
             text-align: center;
-            input{
+            .input{
                 margin: 3px;
                 width: 500px;
                 .opinion{
@@ -157,15 +148,6 @@ footer{
     }
 }
 
-.layout-acerca{
-    width: 70%;
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 @media (max-width:576px){
     .layout-index{
         grid-template-columns: auto;
@@ -187,12 +169,12 @@ footer{
         padding: 100px;
     }
 
-    .dinamico-div{
+    .dinamico .dinamico-div{
         width: 90%;
         margin: 5% auto;
     }
 
-    .form-content input{
+    .dinamico .dinamico-div .form-content input{
         width: 300px;
     }
 }
@@ -227,16 +209,14 @@ footer{
     .layout-acerca{
         width: 90%;
         margin: 30px auto;
-    }
-
-    .logo-img{
-        width: 100px;
-        height: 100px;
-    }
-
-    .acerca-content{
-        margin: 30px 0;
-        padding: 0 5%;
+        .logo-acerca{
+            width: 100px;
+            height: 100px;
+        }
+        .acerca-content{
+            margin: 30px 0;
+            padding: 0 5%;
+        }
     }
 }
 
@@ -255,33 +235,55 @@ footer{
 // camisas jeans joggins zapatillas remeras
 
 .layout-ropa{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 10px;
-    row-gap: 10px;
-    background-color: #212529;
-    width: 70%;
-    margin: 100px auto;
+    @extend .layout-index;
     grid-template-rows: repeat(3, 450px);
     grid-template-areas:
         "tarjeta1 tarjeta2 tarjeta3"
         "tarjeta4 tarjeta5 tarjeta6"
         "tarjeta7 tarjeta8 tarjeta9";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+    .tarjeta9{
+        grid-area: tarjeta9;
+    }
 }
 
 @media (max-width:768px){
     .layout-ropa{
         grid-template-columns: auto;
-        grid-template-rows: repeat(8, 350px);
+        grid-template-rows: repeat(9, 350px);
         grid-template-areas:
-        "jeans"
-        "camisas"
-        "remeras"
-        "zapatillas"
-        "joggins"
-        "camperas"
-        "relojes"
-        "perfumes";
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8"
+        "tarjeta9";
         width: 90%;
         margin: 30px auto;
     }
@@ -290,18 +292,39 @@ footer{
 // perfumes
 
 .layout-perfumes{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 10px;
-    row-gap: 10px;
-    background-color: #212529;
-    width: 70%;
-    margin: 100px auto;
+    @extend .layout-index;
     grid-template-rows: repeat(3, 250px);
     grid-template-areas:
         "tarjeta1 tarjeta2 tarjeta3"
         "tarjeta4 tarjeta5 tarjeta6"
         "tarjeta7 tarjeta8 tarjeta9";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+    .tarjeta9{
+        grid-area: tarjeta9;
+    }
 }
 
 @media (max-width:768px){
@@ -309,14 +332,15 @@ footer{
         grid-template-columns: auto;
         grid-template-rows: repeat(8, 250px);
         grid-template-areas:
-        "jeans"
-        "camisas"
-        "remeras"
-        "zapatillas"
-        "joggins"
-        "camperas"
-        "relojes"
-        "perfumes";
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8"
+        "tarjeta9";
         width: 90%;
         margin: 30px auto;
     }
@@ -325,18 +349,39 @@ footer{
 // camperas
 
 .layout-camperas{
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    column-gap: 10px;
-    row-gap: 10px;
-    background-color: #212529;
-    width: 70%;
-    margin: 100px auto;
+    @extend .layout-index;
     grid-template-rows: repeat(3, 500px);
     grid-template-areas:
         "tarjeta1 tarjeta2 tarjeta3"
         "tarjeta4 tarjeta5 tarjeta6"
         "tarjeta7 tarjeta8 tarjeta9";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+    .tarjeta9{
+        grid-area: tarjeta9;
+    }
 }
 
 @media (max-width:768px){
@@ -344,14 +389,15 @@ footer{
         grid-template-columns: auto;
         grid-template-rows: repeat(8, 400px);
         grid-template-areas:
-        "jeans"
-        "camisas"
-        "remeras"
-        "zapatillas"
-        "joggins"
-        "camperas"
-        "relojes"
-        "perfumes";
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8"
+        "tarjeta9";
         width: 90%;
         margin: 30px auto;
     }
@@ -360,12 +406,7 @@ footer{
 //relojes zapatillas
 
 .layout-relojes{
-    display: grid;
-    column-gap: 10px;
-    row-gap: 10px;
-    background-color: #212529;
-    width: 70%;
-    margin: 100px auto;
+    @extend .layout-index;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(4, 400px);
     grid-template-areas:
@@ -373,6 +414,30 @@ footer{
         "tarjeta3 tarjeta4"
         "tarjeta5 tarjeta6"
         "tarjeta7 tarjeta8";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
 }
 
 @media (max-width:678px){
@@ -380,14 +445,14 @@ footer{
         grid-template-columns: auto;
         grid-template-rows: repeat(8, 400px);
         grid-template-areas:
-        "jeans"
-        "camisas"
-        "remeras"
-        "zapatillas"
-        "joggins"
-        "camperas"
-        "relojes"
-        "perfumes";
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8";
         width: 90%;
         margin: 30px auto;
     }
