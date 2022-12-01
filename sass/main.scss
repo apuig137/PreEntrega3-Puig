@@ -1,4 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap');
 @import "vars";
-@import "layouts";
-@import "media-queries";
-@import "componentes";
+
+*{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+nav{
+    .img-logo{
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.tittle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 200px;
+    color: white;
+    font-size:xx-large;
+    font-weight: bold;
+    background-image: url(https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-hipster-lumbersexual-empresario-modelo-hombre-vestido-ropa-chaqueta-jeans_158538-1729.jpg?w=2000);
+}
+
+.tarjeta{
+    background-color: burlywood;
+    text-align: center;
+    line-height: 500px;
+    background: var(--i);
+    background-size: cover;
+    .contenido{
+        @include sizes(100%,100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, .4);
+        opacity: 0;
+        transition: .5s;
+        a{
+            color: rgba(255, 255, 255, .8);
+            font-size: xx-large;
+            margin: 10px 0;
+            text-decoration: none;
+        }
+    }
+}
+.tarjeta:hover .contenido{
+    opacity: 1;
+    a{
+        color: rgba(255, 255, 255, .8);
+    }
+}
+
+.layout-index{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(8, 250px);
+    grid-template-areas:
+        "jeans camisas camisas"
+        "jeans camisas camisas"
+        "remeras remeras zapatillas"
+        "remeras remeras zapatillas"
+        "joggins camperas camperas"
+        "joggins camperas camperas"
+        "relojes relojes perfumes"
+        "relojes relojes perfumes";
+    column-gap: 10px;
+    row-gap: 10px;
+    background-color: #212529;
+    width: 70%;
+    margin: 100px auto;
+    border: 10px solid #212529;
+    .remeras{
+        grid-area: remeras;
+    }
+    .camperas{
+        grid-area: camperas;
+    }
+    .zapatillas{
+        grid-area: zapatillas;
+    }
+    .joggins{
+        grid-area: joggins;
+    }
+    .jeans{
+        grid-area: jeans;
+    }
+    .camisas{
+        grid-area: camisas;
+    }
+    .relojes{
+        grid-area: relojes;
+    }
+    .perfumes{
+        grid-area: perfumes;
+    }
+}
+
+.dinamico{
+    background-color: #212529;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .dinamico-div{
+        background-color: white;
+        border: black solid;
+        border-radius: 5px;
+        box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
+        margin: 10px;
+        @include sizes(600px,500px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .form-content{
+            padding: 5px;
+            text-align: center;
+            input{
+                margin: 3px;
+                width: 500px;
+            }
+            .opinion{
+                height: 300px;
+            }
+        }
+    }
+}
+
+footer{
+    background-color: #212529;
+    color: #ffffff;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .redes{
+        margin-top: 25px;
+        .red{
+            margin: 0 20px;
+            color: #ffffff;
+        }
+    }
+}
+
+@media (max-width:576px){
+    .layout-index{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(8, 250px);
+        grid-template-areas:
+        "jeans"
+        "camisas"
+        "remeras"
+        "zapatillas"
+        "joggins"
+        "camperas"
+        "relojes"
+        "perfumes";
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .tittle{
+        padding: 100px;
+    }
+
+    .dinamico .dinamico-div{
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .dinamico .dinamico-div .form-content input{
+        width: 300px;
+    }
+}
+
+// quienes somos
+
+.layout-acerca{
+    width: 70%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .logo-acerca{
+        @include sizes(200px,200px);
+    }
+    .acerca-content{
+        margin: 40px 0;
+        padding: 0 20%;
+        border: solid #212529 2px;
+        border-radius: 5px;
+    }
+    .acerca-content:hover{
+        background-color: #212529;
+        color: #ffffff;
+        transition: .5s;
+    }
+}
+
+@media (max-width:576px){
+    .layout-acerca{
+        width: 90%;
+        margin: 30px auto;
+        .logo-acerca{
+            @include sizes(100px,100px);
+        }
+        .acerca-content{
+            margin: 30px 0;
+            padding: 0 5%;
+        }
+    }
+}
+
+@media (max-width:768px){
+    .acerca-content{
+        padding: 0 10%;
+    }
+}
+
+@media (max-width:992px){
+    .acerca-content{
+        padding: 0 15%;
+    }
+}
+
+// camisas jeans joggins zapatillas remeras
+
+.layout-ropa{
+    @extend .layout-index;
+    grid-template-rows: repeat(3, 450px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3"
+        "tarjeta4 tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8 tarjeta9";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+    .tarjeta9{
+        grid-area: tarjeta9;
+    }
+}
+
+@media (max-width:768px){
+    .layout-ropa{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(9, 350px);
+        grid-template-areas:
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8"
+        "tarjeta9";
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+// perfumes
+
+.layout-perfumes{
+    @extend .layout-index;
+    grid-template-rows: repeat(3, 250px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3"
+        "tarjeta4 tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8 tarjeta9";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+    .tarjeta9{
+        grid-area: tarjeta9;
+    }
+}
+
+@media (max-width:768px){
+    .layout-perfumes{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(8, 250px);
+        grid-template-areas:
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8"
+        "tarjeta9";
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+// camperas
+
+.layout-camperas{
+    @extend .layout-index;
+    grid-template-rows: repeat(3, 500px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2 tarjeta3"
+        "tarjeta4 tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8 tarjeta9";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+    .tarjeta9{
+        grid-area: tarjeta9;
+    }
+}
+
+@media (max-width:768px){
+    .layout-camperas{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(8, 400px);
+        grid-template-areas:
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8"
+        "tarjeta9";
+        width: 90%;
+        margin: 30px auto;
+    }
+}
+
+//relojes zapatillas
+
+.layout-relojes{
+    @extend .layout-index;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, 400px);
+    grid-template-areas:
+        "tarjeta1 tarjeta2"
+        "tarjeta3 tarjeta4"
+        "tarjeta5 tarjeta6"
+        "tarjeta7 tarjeta8";
+    .tarjeta1{
+        grid-area: tarjeta1;
+    }
+    .tarjeta2{
+        grid-area: tarjeta2;
+    }
+    .tarjeta3{
+        grid-area: tarjeta3;
+    }
+    .tarjeta4{
+        grid-area: tarjeta4;
+    }
+    .tarjeta5{
+        grid-area: tarjeta5;
+    }
+    .tarjeta6{
+        grid-area: tarjeta6;
+    }
+    .tarjeta7{
+        grid-area: tarjeta7;
+    }
+    .tarjeta8{
+        grid-area: tarjeta8;
+    }
+}
+
+@media (max-width:678px){
+    .layout-relojes{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(8, 400px);
+        grid-template-areas:
+        "tarjeta1"
+        "tarjeta2"
+        "tarjeta3"
+        "tarjeta4"
+        "tarjeta5"
+        "tarjeta6"
+        "tarjeta7"
+        "tarjeta8";
+        width: 90%;
+        margin: 30px auto;
+    }
+}

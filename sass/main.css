@@ -1,4 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap");
+* {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+nav .img-logo {
+  height: 50px;
+  width: 50px;
+}
+
+.tittle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 200px;
+  color: white;
+  font-size: xx-large;
+  font-weight: bold;
+  background-image: url(https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-hipster-lumbersexual-empresario-modelo-hombre-vestido-ropa-chaqueta-jeans_158538-1729.jpg?w=2000);
+}
+
+.tarjeta {
+  background-color: burlywood;
+  text-align: center;
+  line-height: 500px;
+  background: var(--i);
+  background-size: cover;
+}
+.tarjeta .contenido {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: 0.5s;
+}
+.tarjeta .contenido a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: xx-large;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+.tarjeta:hover .contenido {
+  opacity: 1;
+}
+.tarjeta:hover .contenido a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .layout-index, .layout-relojes, .layout-camperas, .layout-perfumes, .layout-ropa {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -35,6 +88,54 @@
 }
 .layout-index .perfumes, .layout-relojes .perfumes, .layout-camperas .perfumes, .layout-perfumes .perfumes, .layout-ropa .perfumes {
   grid-area: perfumes;
+}
+
+.dinamico {
+  background-color: #212529;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.dinamico .dinamico-div {
+  background-color: white;
+  border: black solid;
+  border-radius: 5px;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
+  margin: 10px;
+  width: 600px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dinamico .dinamico-div .form-content {
+  padding: 5px;
+  text-align: center;
+}
+.dinamico .dinamico-div .form-content input {
+  margin: 3px;
+  width: 500px;
+}
+.dinamico .dinamico-div .form-content .opinion {
+  height: 300px;
+}
+
+footer {
+  background-color: #212529;
+  color: #ffffff;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer .redes {
+  margin-top: 25px;
+}
+footer .redes .red {
+  margin: 0 20px;
+  color: #ffffff;
 }
 
 @media (max-width: 576px) {
@@ -265,104 +366,4 @@
     width: 90%;
     margin: 30px auto;
   }
-}
-* {
-  font-family: "Libre Franklin", sans-serif;
-}
-
-nav .img-logo {
-  width: 50px;
-  height: 50px;
-}
-
-.tittle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 200px;
-  color: #ffffff;
-  font-size: xx-large;
-  font-weight: bold;
-  background-image: url(https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-hipster-lumbersexual-empresario-modelo-hombre-vestido-ropa-chaqueta-jeans_158538-1729.jpg?w=2000);
-}
-
-.tarjeta {
-  background-color: burlywood;
-  text-align: center;
-  line-height: 500px;
-  background: var(--i);
-  background-size: cover;
-}
-.tarjeta .contenido {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  transition: 0.5s;
-}
-.tarjeta .contenido a {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: xx-large;
-  margin: 10px 0;
-  text-decoration: none;
-}
-
-.tarjeta:hover .contenido {
-  opacity: 1;
-}
-.tarjeta:hover .contenido a {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.dinamico {
-  background-color: #212529;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.dinamico .dinamico-div {
-  background-color: #ffffff;
-  border: #000000 solid;
-  border-radius: 5px;
-  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
-  margin: 10px;
-  width: 600px;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.dinamico .dinamico-div .form-content {
-  padding: 5px;
-  text-align: center;
-}
-.dinamico .dinamico-div .form-content input {
-  margin: 3px;
-  width: 500px;
-}
-.dinamico .dinamico-div .form-content input .opinion {
-  height: 300px;
-}
-
-footer {
-  background-color: #212529;
-  color: #ffffff;
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-footer .redes {
-  margin-top: 25px;
-}
-footer .redes .red {
-  margin: 0 20px;
-  color: #ffffff;
 }/*# sourceMappingURL=main.css.map */
