@@ -177,6 +177,17 @@ footer{
     }
 }
 
+@media (max-width:350px){
+    .dinamico .dinamico-div{
+        iframe{
+            width: 100%;
+        }
+        .form-content input{
+            width: 200px;
+        }
+    }
+}
+
 // quienes somos
 
 .layout-acerca{

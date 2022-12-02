@@ -157,6 +157,14 @@ footer .redes .red {
     width: 300px;
   }
 }
+@media (max-width: 350px) {
+  .dinamico .dinamico-div iframe {
+    width: 100%;
+  }
+  .dinamico .dinamico-div .form-content input {
+    width: 200px;
+  }
+}
 .layout-acerca {
   width: 70%;
   margin: 50px auto;
