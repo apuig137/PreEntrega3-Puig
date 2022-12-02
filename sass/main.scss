@@ -18,7 +18,7 @@ nav{
     align-items: center;
     text-align: center;
     padding: 200px;
-    color: white;
+    color: $blanco;
     font-size:xx-large;
     font-weight: bold;
     background-image: url(https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-hipster-lumbersexual-empresario-modelo-hombre-vestido-ropa-chaqueta-jeans_158538-1729.jpg?w=2000);
@@ -69,10 +69,10 @@ nav{
         "relojes relojes perfumes";
     column-gap: 10px;
     row-gap: 10px;
-    background-color: #212529;
+    background-color: $gris-oscuro;
     width: 70%;
     margin: 100px auto;
-    border: 10px solid #212529;
+    border: 10px solid $gris-oscuro;
     .remeras{
         grid-area: remeras;
     }
@@ -100,14 +100,14 @@ nav{
 }
 
 .dinamico{
-    background-color: #212529;
+    background-color: $gris-oscuro;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     .dinamico-div{
-        background-color: white;
-        border: black solid;
+        background-color: $blanco;
+        border: $negro solid;
         border-radius: 5px;
         box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
         margin: 10px;
@@ -130,8 +130,8 @@ nav{
 }
 
 footer{
-    background-color: #212529;
-    color: #ffffff;
+    background-color: $gris-oscuro;
+    color: $blanco;
     padding: 40px 0;
     display: flex;
     flex-direction: column;
@@ -141,7 +141,7 @@ footer{
         margin-top: 25px;
         .red{
             margin: 0 20px;
-            color: #ffffff;
+            color: $blanco;
         }
     }
 }
@@ -203,12 +203,12 @@ footer{
     .acerca-content{
         margin: 40px 0;
         padding: 0 20%;
-        border: solid #212529 2px;
+        border: solid $gris-oscuro 2px;
         border-radius: 5px;
     }
     .acerca-content:hover{
-        background-color: #212529;
-        color: #ffffff;
+        background-color: $gris-oscuro;
+        color: $blanco;
         transition: .5s;
     }
 }

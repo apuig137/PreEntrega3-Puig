@@ -14,7 +14,7 @@ nav .img-logo {
   align-items: center;
   text-align: center;
   padding: 200px;
-  color: white;
+  color: #ffffff;
   font-size: xx-large;
   font-weight: bold;
   background-image: url(https://img.freepik.com/foto-gratis/retrato-guapo-sonriente-elegante-hipster-lumbersexual-empresario-modelo-hombre-vestido-ropa-chaqueta-jeans_158538-1729.jpg?w=2000);
@@ -98,8 +98,8 @@ nav .img-logo {
   flex-wrap: wrap;
 }
 .dinamico .dinamico-div {
-  background-color: white;
-  border: black solid;
+  background-color: #ffffff;
+  border: #000000 solid;
   border-radius: 5px;
   box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.8);
   margin: 10px;
